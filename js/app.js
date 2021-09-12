@@ -1,8 +1,11 @@
 const loadProducts = () => {
-  const url = `https://fakestoreapi.com/products`;
-  fetch(url)
+  // const url = `https://fakestoreapi.com/products`;
+  // fetch(url)
+  fetch('../js/bappa.json')
     .then((response) => response.json())
     .then((data) => showProducts(data));
+  // .then((data) => console.log(data));
+
 };
 loadProducts();
 
@@ -37,7 +40,9 @@ const addToCart = (id, price) => {
 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  const converted = parseInt(element);
+
+  //------> change parsInt to parseFlote to take the value in float -->
+  const converted = parseFloat(element);
   return converted;
 };
 
@@ -46,7 +51,8 @@ const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  document.getElementById(id).innerText = Math.round(total);
+  // --> fix the price bug of two decimals --> 
+  document.getElementById(id).innerText = parseFloat(total).toFixed(2);
 };
 
 // set innerText function
