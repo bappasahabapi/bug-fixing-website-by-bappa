@@ -11,6 +11,7 @@ body {
 .search-field:hover {
   outline: none;
   border: none;
+  
 }
 .search-box {
   border: 1px solid rgb(3, 118, 211);
@@ -24,6 +25,10 @@ body {
   padding: 10px 50px;
   border-radius: 25px;
   margin-left: 20px;
+}
+
+#addToCart-btn:hover{
+  background-color:black;
 }
 #all-products {
   display: grid;
@@ -42,7 +47,8 @@ body {
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
-  border: 1px solid cyan;
+  border: 1px solid gray;
+  background-color: rgba(255, 255, 255, 0.856);
 }
 .product-image {
   width: 150px;
