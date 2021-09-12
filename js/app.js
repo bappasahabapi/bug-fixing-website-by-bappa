@@ -29,6 +29,7 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
+
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -36,6 +37,8 @@ const addToCart = (id, price) => {
 
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
+  //--> call the update total function
+  updateTotal();
 };
 
 const getInputValue = (id) => {
@@ -79,8 +82,9 @@ const updateTaxAndCharge = () => {
 
 //grandTotal update function
 const updateTotal = () => {
-  const grandTotal =
-    getInputValue("price") + getInputValue("delivery-charge") +
-    getInputValue("total-tax");
-  document.getElementById("grand-total").innerText = grandTotal;
+
+  const grandTotal = (getInputValue("price") + getInputValue("delivery-charge") +
+    getInputValue("total-tax")).toFixed(2);
+
+  document.getElementById('total').innerText = grandTotal;
 };
