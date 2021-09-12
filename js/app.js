@@ -1,5 +1,7 @@
 const loadProducts = () => {
+
   // fetch('../js/bappa.json')
+
   const url = `https://fakestoreapi.com/products`;
   fetch(url)
     .then((response) => response.json())
@@ -63,7 +65,8 @@ const updatePrice = (id, value) => {
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = Math.round(value);
+  // document.getElementById(id).innerText = Math.round(value);
+  document.getElementById(id).innerText = parseFloat(value).toFixed(2);
 };
 
 // update delivery charge and total Tax
