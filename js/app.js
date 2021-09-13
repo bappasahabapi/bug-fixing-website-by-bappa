@@ -6,8 +6,6 @@ const loadProducts = () => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts(data));
-  // .then((data) => console.log(data));
-
 };
 loadProducts();
 
@@ -64,7 +62,6 @@ const updatePrice = (id, value) => {
 
 // set innerText function
 const setInnerText = (id, value) => {
-  // document.getElementById(id).innerText = Math.round(value);
   document.getElementById(id).innerText = parseFloat(value).toFixed(2);
 };
 
@@ -87,7 +84,6 @@ const updateTaxAndCharge = () => {
 
 //grandTotal update function
 const updateTotal = () => {
-
   const grandTotal = (getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax")).toFixed(2);
 
